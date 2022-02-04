@@ -1,22 +1,17 @@
 
-// You should implement your task here.
 
-// module.exports = function towelSort (matrix) {
-  function res (matrix) {
-   
 
-    
-    
     module.exports = function towelSort (matrix) {
-      return matrix.reduce((acc,el,i) =>{
-        console.log(matrix)
-        if(i %2 == 0) {
-          console.log(el)
-          el.forEach(element => acc.push(element))
-        }else {
-          el.reverse().forEach(element => acc.push(element))
-          
+      if (matrix===undefined || matrix === []) return [];
+      return matrix.reduce((acc,item,index)=>{
+        if(index %2 === 0) {
+          item.forEach(num=>acc.push(num))
         }
-        return acc
+        else {
+          item.reverse().forEach(num=>acc.push(num))
+        }
+        return acc;
       },[])
     }
+    
+    
